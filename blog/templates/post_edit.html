@@ -1,10 +1,34 @@
-<!--templates\post_edit.html-->
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
+{% block title %}Edit Post - BlogHub{% endblock %}
+
+{% block hero %}{% endblock %}
 
 {% block content %}
-    <h1> Тағйир додани пост</h1>
-    <form action="" method="post">{% csrf_token %}
-{{ form.as_p }}
-    <input type="submit" value="Update">
+<div class="post-form">
+    <h1 class="mb-4">Edit Post</h1>
+    <form method="post" class="form-card">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="mb-3">
+                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                {% if field.errors %}
+                    {{ field }}
+                    <div class="invalid-feedback d-block">
+                        {{ field.errors }}
+                    </div>
+                {% else %}
+                    {{ field }}
+                {% endif %}
+                {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text|safe }}</small>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="{% url 'post_detail' object.pk %}" class="btn btn-outline-secondary">Cancel</a>
+        </div>
     </form>
-{% endblock content %}
+</div>
+{% endblock %}
