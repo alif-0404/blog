@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}Login - BlogHub{% endblock %}
+{% block title %}Воридшавӣ{% endblock %}
 
 {% block hero %}{% endblock %}
 
 {% block content %}
 <div class="auth-container">
     <div class="auth-card">
-        <h2 class="text-center mb-4">Login</h2>
+        <h2 class="text-center mb-4">Воридшавӣ</h2>
         <form method="post" class="login-form">
             {% csrf_token %}
             {% if form.non_field_errors %}
@@ -30,11 +30,11 @@
                 </div>
             {% endfor %}
             
-            <button type="submit" class="btn btn-primary w-100">Login</button>
+            <button type="submit" class="btn btn-primary w-100">Воридшавӣ</button>
         </form>
         
         <p class="text-center mt-3">
-            Don't have an account? <a href="{% url 'signup' %}">Sign up here</a>
+            Аккаунт надоред? <a href="{% url 'signup' %}">Дар ин ҷо худро ба қайд гиред!</a>
         </p>
     </div>
 </div>

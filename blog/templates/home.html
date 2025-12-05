@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Home - BlogHub{% endblock %}
+{% block title %}Асосӣ{% endblock %}
 
 {% block hero %}{% endblock %}
 
@@ -16,16 +16,16 @@
                     </a>
                 </h2>
                 <p class="card-meta">
-                    <small class="text-muted">By {{ post.author.username }} • {{ post.created_at|date:'M d, Y' }}</small>
+                    <small class="text-muted">Аз тарафи {{ post.author.username }} • {{ post.created_at|date:'M d, Y' }}</small>
                 </p>
                 <p class="card-text">{{ post.body|truncatewords:30 }}</p>
-                <a href="{% url 'post_detail' post.pk %}" class="btn btn-sm btn-primary">Read More</a>
+                <a href="{% url 'post_detail' post.pk %}" class="btn btn-sm btn-primary">Муфассал</a>
             </div>
         </div>
         {% endfor %}
     {% else %}
         <div class="text-center py-5">
-            <p class="text-muted">No posts yet. <a href="{% url 'post_new' %}">Create one!</a></p>
+            <p class="text-muted">Хабар нест. <a href="{% url 'post_new' %}">Хабари нав зам намудан!</a></p>
         </div>
     {% endif %}
 </div>

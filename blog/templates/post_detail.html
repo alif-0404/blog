@@ -9,7 +9,7 @@
     <article>
         <h1 class="display-4">{{ object.title }}</h1>
         <p class="text-muted">
-            <small>By <strong>{{ object.author.username }}</strong> • {{ object.created_at|date:'F d, Y' }}</small>
+            <small>Муаллиф <strong>{{ object.author.username }}</strong> • {{ object.created_at|date:'F d, Y' }}</small>
         </p>
         <hr>
         <div class="post-body">
@@ -18,11 +18,11 @@
         <hr>
         <div class="post-actions">
             {% if user.is_authenticated and user == object.author or user.is_staff %}
-                <a href="{% url 'post_edit' object.pk %}" class="btn btn-warning btn-sm">Edit</a>
-                <a href="{% url 'post_delete' object.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                <a href="{% url 'post_edit' object.pk %}" class="btn btn-warning btn-sm">Ивазкунӣ</a>
+                <a href="{% url 'post_delete' object.pk %}" class="btn btn-danger btn-sm">Несткунӣ</a>
             {% endif %}
         </div>
     </article>
 </div>
-<a href="{% url 'home' %}" class="btn btn-outline-primary mt-4">← Back to Home</a>
+<a href="{% url 'home' %}" class="btn btn-outline-primary mt-4">← Бозгашт ба саҳифаи асосӣ</a>
 {% endblock %}

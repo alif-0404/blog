@@ -7,7 +7,7 @@
 {% block content %}
 <div class="auth-container">
     <div class="auth-card">
-        <h2 class="text-center mb-4">Create Account</h2>
+        <h2 class="text-center mb-4">Сохтани аккаунт</h2>
         <form method="post" class="signup-form">
             {% csrf_token %}
             {% if form.non_field_errors %}
@@ -33,11 +33,11 @@
                 </div>
             {% endfor %}
             
-            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+            <button type="submit" class="btn btn-primary w-100">Бақайдгирӣ</button>
         </form>
         
         <p class="text-center mt-3">
-            Already have an account? <a href="{% url 'login' %}">Login here</a>
+            Аллакай аккаунт доред? <a href="{% url 'login' %}">Дар ин ҷо ворид шавед</a>
         </p>
     </div>
 </div>

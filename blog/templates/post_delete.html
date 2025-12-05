@@ -7,8 +7,8 @@
 {% block content %}
 <div class="delete-confirmation">
     <div class="alert alert-warning" role="alert">
-        <h4 class="alert-heading">Delete Post?</h4>
-        <p>Are you sure you want to delete this post?</p>
+        <h4 class="alert-heading">Хабарро нест карадн?</h4>
+        <p>Шумо дар ҳақиқат мехлҳед, ки хабарро нест кунед?</p>
         <hr>
         <p class="mb-0"><strong>{{ object.title }}</strong></p>
     </div>
@@ -20,8 +20,8 @@
     
     <form method="post" class="d-inline">
         {% csrf_token %}
-        <button type="submit" class="btn btn-danger">Yes, Delete</button>
-        <a href="{% url 'post_detail' object.pk %}" class="btn btn-outline-secondary">Cancel</a>
+        <button type="submit" class="btn btn-danger">Ҳа, нест кардан</button>
+        <a href="{% url 'post_detail' object.pk %}" class="btn btn-outline-secondary">Бозгашт</a>
     </form>
 </div>
 {% endblock %}

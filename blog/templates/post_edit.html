@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}Edit Post - BlogHub{% endblock %}
+{% block title %}Ивазкунӣ{% endblock %}
 
 {% block hero %}{% endblock %}
 
 {% block content %}
 <div class="post-form">
-    <h1 class="mb-4">Edit Post</h1>
+    <h1 class="mb-4">Ивазкунии хабар</h1>
     <form method="post" class="form-card">
         {% csrf_token %}
         {% for field in form %}
@@ -26,8 +26,8 @@
             </div>
         {% endfor %}
         <div class="d-flex gap-2">
-            <button type="submit" class="btn btn-primary">Update</button>
-            <a href="{% url 'post_detail' object.pk %}" class="btn btn-outline-secondary">Cancel</a>
+            <button type="submit" class="btn btn-primary">Ивазкунӣ</button>
+            <a href="{% url 'post_detail' object.pk %}" class="btn btn-outline-secondary">Бозгашт</a>
         </div>
     </form>
 </div>
